@@ -1,0 +1,614 @@
+[
+  {
+    "Dmitrovichi": {
+      "country": "UA", 
+      "measured_parameters": [
+        "PM1", 
+        "PM1 count", 
+        "PM10", 
+        "PM10 count", 
+        "PM2.5", 
+        "PM2.5 count"
+      ], 
+      "coordinates": {
+        "latitude": 50.2075, 
+        "longitude": 30.5249
+      }
+    }
+  }, 
+  {
+    "KoncheZaspa": {
+      "country": "UA", 
+      "measured_parameters": [
+        "PM10 count", 
+        "PM1", 
+        "PM2.5", 
+        "PM2.5 count", 
+        "PM1 count", 
+        "PM10"
+      ], 
+      "coordinates": {
+        "latitude": 50.2664, 
+        "longitude": 30.6423
+      }
+    }
+  }, 
+  {
+    "Shepeleva": {
+      "country": "UA", 
+      "measured_parameters": [
+        "PM1", 
+        "PM10", 
+        "PM2.5", 
+        "PM10 count", 
+        "PM2.5 count", 
+        "PM1 count"
+      ], 
+      "coordinates": {
+        "latitude": 50.4204, 
+        "longitude": 30.4323
+      }
+    }
+  }, 
+  {
+    "Osokorky": {
+      "country": "UA", 
+      "measured_parameters": [
+        "PM2.5 count", 
+        "PM2.5", 
+        "PM10 count", 
+        "PM1", 
+        "PM1 count", 
+        "PM10"
+      ], 
+      "coordinates": {
+        "latitude": 50.4086, 
+        "longitude": 30.625
+      }
+    }
+  }, 
+  {
+    "Hlepcha": {
+      "country": "UA", 
+      "measured_parameters": [
+        "PM1", 
+        "PM2.5", 
+        "PM10", 
+        "PM1 count", 
+        "PM10 count", 
+        "PM2.5 count"
+      ], 
+      "coordinates": {
+        "latitude": 50.1822, 
+        "longitude": 30.202
+      }
+    }
+  }, 
+  {
+    "Blockchain Hub Kyiv": {
+      "country": "UA", 
+      "measured_parameters": [
+        "PM1 count", 
+        "PM2.5", 
+        "PM10", 
+        "PM2.5 count", 
+        "PM10 count", 
+        "PM1"
+      ], 
+      "coordinates": {
+        "latitude": 50.4666, 
+        "longitude": 30.516
+      }
+    }
+  }, 
+  {
+    "Dmitrovichi": {
+      "country": "UA", 
+      "measured_parameters": [
+        "PM1", 
+        "PM1 count", 
+        "PM10", 
+        "PM10 count", 
+        "PM2.5", 
+        "PM2.5 count"
+      ], 
+      "coordinates": {
+        "latitude": 50.2075, 
+        "longitude": 30.5249
+      }
+    }
+  }, 
+  {
+    "KoncheZaspa": {
+      "country": "UA", 
+      "measured_parameters": [
+        "PM10 count", 
+        "PM1", 
+        "PM2.5", 
+        "PM2.5 count", 
+        "PM1 count", 
+        "PM10"
+      ], 
+      "coordinates": {
+        "latitude": 50.2664, 
+        "longitude": 30.6423
+      }
+    }
+  }, 
+  {
+    "Shepeleva": {
+      "country": "UA", 
+      "measured_parameters": [
+        "PM1", 
+        "PM10", 
+        "PM2.5", 
+        "PM10 count", 
+        "PM2.5 count", 
+        "PM1 count"
+      ], 
+      "coordinates": {
+        "latitude": 50.4204, 
+        "longitude": 30.4323
+      }
+    }
+  }, 
+  {
+    "Osokorky": {
+      "country": "UA", 
+      "measured_parameters": [
+        "PM2.5 count", 
+        "PM2.5", 
+        "PM10 count", 
+        "PM1", 
+        "PM1 count", 
+        "PM10"
+      ], 
+      "coordinates": {
+        "latitude": 50.4086, 
+        "longitude": 30.625
+      }
+    }
+  }, 
+  {
+    "Hlepcha": {
+      "country": "UA", 
+      "measured_parameters": [
+        "PM1", 
+        "PM2.5", 
+        "PM10", 
+        "PM1 count", 
+        "PM10 count", 
+        "PM2.5 count"
+      ], 
+      "coordinates": {
+        "latitude": 50.1822, 
+        "longitude": 30.202
+      }
+    }
+  }, 
+  {
+    "Blockchain Hub Kyiv": {
+      "country": "UA", 
+      "measured_parameters": [
+        "PM1 count", 
+        "PM2.5", 
+        "PM10", 
+        "PM2.5 count", 
+        "PM10 count", 
+        "PM1"
+      ], 
+      "coordinates": {
+        "latitude": 50.4666, 
+        "longitude": 30.516
+      }
+    }
+  }, 
+  {
+    "Dmitrovichi": {
+      "country": "UA", 
+      "measured_parameters": [
+        "PM1", 
+        "PM1 count", 
+        "PM10", 
+        "PM10 count", 
+        "PM2.5", 
+        "PM2.5 count"
+      ], 
+      "coordinates": {
+        "latitude": 50.2075, 
+        "longitude": 30.5249
+      }
+    }
+  }, 
+  {
+    "KoncheZaspa": {
+      "country": "UA", 
+      "measured_parameters": [
+        "PM10 count", 
+        "PM1", 
+        "PM2.5", 
+        "PM2.5 count", 
+        "PM1 count", 
+        "PM10"
+      ], 
+      "coordinates": {
+        "latitude": 50.2664, 
+        "longitude": 30.6423
+      }
+    }
+  }, 
+  {
+    "Shepeleva": {
+      "country": "UA", 
+      "measured_parameters": [
+        "PM1", 
+        "PM10", 
+        "PM2.5", 
+        "PM10 count", 
+        "PM2.5 count", 
+        "PM1 count"
+      ], 
+      "coordinates": {
+        "latitude": 50.4204, 
+        "longitude": 30.4323
+      }
+    }
+  }, 
+  {
+    "Osokorky": {
+      "country": "UA", 
+      "measured_parameters": [
+        "PM2.5 count", 
+        "PM2.5", 
+        "PM10 count", 
+        "PM1", 
+        "PM1 count", 
+        "PM10"
+      ], 
+      "coordinates": {
+        "latitude": 50.4086, 
+        "longitude": 30.625
+      }
+    }
+  }, 
+  {
+    "Hlepcha": {
+      "country": "UA", 
+      "measured_parameters": [
+        "PM1", 
+        "PM2.5", 
+        "PM10", 
+        "PM1 count", 
+        "PM10 count", 
+        "PM2.5 count"
+      ], 
+      "coordinates": {
+        "latitude": 50.1822, 
+        "longitude": 30.202
+      }
+    }
+  }, 
+  {
+    "Blockchain Hub Kyiv": {
+      "country": "UA", 
+      "measured_parameters": [
+        "PM1 count", 
+        "PM2.5", 
+        "PM10", 
+        "PM2.5 count", 
+        "PM10 count", 
+        "PM1"
+      ], 
+      "coordinates": {
+        "latitude": 50.4666, 
+        "longitude": 30.516
+      }
+    }
+  }, 
+  {
+    "Dmitrovichi": {
+      "country": "UA", 
+      "measured_parameters": [
+        "PM1", 
+        "PM1 count", 
+        "PM10", 
+        "PM10 count", 
+        "PM2.5", 
+        "PM2.5 count"
+      ], 
+      "coordinates": {
+        "latitude": 50.2075, 
+        "longitude": 30.5249
+      }
+    }
+  }, 
+  {
+    "KoncheZaspa": {
+      "country": "UA", 
+      "measured_parameters": [
+        "PM10 count", 
+        "PM1", 
+        "PM2.5", 
+        "PM2.5 count", 
+        "PM1 count", 
+        "PM10"
+      ], 
+      "coordinates": {
+        "latitude": 50.2664, 
+        "longitude": 30.6423
+      }
+    }
+  }, 
+  {
+    "Shepeleva": {
+      "country": "UA", 
+      "measured_parameters": [
+        "PM1", 
+        "PM10", 
+        "PM2.5", 
+        "PM10 count", 
+        "PM2.5 count", 
+        "PM1 count"
+      ], 
+      "coordinates": {
+        "latitude": 50.4204, 
+        "longitude": 30.4323
+      }
+    }
+  }, 
+  {
+    "Osokorky": {
+      "country": "UA", 
+      "measured_parameters": [
+        "PM2.5 count", 
+        "PM2.5", 
+        "PM10 count", 
+        "PM1", 
+        "PM1 count", 
+        "PM10"
+      ], 
+      "coordinates": {
+        "latitude": 50.4086, 
+        "longitude": 30.625
+      }
+    }
+  }, 
+  {
+    "Hlepcha": {
+      "country": "UA", 
+      "measured_parameters": [
+        "PM1", 
+        "PM2.5", 
+        "PM10", 
+        "PM1 count", 
+        "PM10 count", 
+        "PM2.5 count"
+      ], 
+      "coordinates": {
+        "latitude": 50.1822, 
+        "longitude": 30.202
+      }
+    }
+  }, 
+  {
+    "Blockchain Hub Kyiv": {
+      "country": "UA", 
+      "measured_parameters": [
+        "PM1 count", 
+        "PM2.5", 
+        "PM10", 
+        "PM2.5 count", 
+        "PM10 count", 
+        "PM1"
+      ], 
+      "coordinates": {
+        "latitude": 50.4666, 
+        "longitude": 30.516
+      }
+    }
+  }, 
+  {
+    "Dmitrovichi": {
+      "country": "UA", 
+      "measured_parameters": [
+        "PM1", 
+        "PM1 count", 
+        "PM10", 
+        "PM10 count", 
+        "PM2.5", 
+        "PM2.5 count"
+      ], 
+      "coordinates": {
+        "latitude": 50.2075, 
+        "longitude": 30.5249
+      }
+    }
+  }, 
+  {
+    "KoncheZaspa": {
+      "country": "UA", 
+      "measured_parameters": [
+        "PM10 count", 
+        "PM1", 
+        "PM2.5", 
+        "PM2.5 count", 
+        "PM1 count", 
+        "PM10"
+      ], 
+      "coordinates": {
+        "latitude": 50.2664, 
+        "longitude": 30.6423
+      }
+    }
+  }, 
+  {
+    "Shepeleva": {
+      "country": "UA", 
+      "measured_parameters": [
+        "PM1", 
+        "PM10", 
+        "PM2.5", 
+        "PM10 count", 
+        "PM2.5 count", 
+        "PM1 count"
+      ], 
+      "coordinates": {
+        "latitude": 50.4204, 
+        "longitude": 30.4323
+      }
+    }
+  }, 
+  {
+    "Osokorky": {
+      "country": "UA", 
+      "measured_parameters": [
+        "PM2.5 count", 
+        "PM2.5", 
+        "PM10 count", 
+        "PM1", 
+        "PM1 count", 
+        "PM10"
+      ], 
+      "coordinates": {
+        "latitude": 50.4086, 
+        "longitude": 30.625
+      }
+    }
+  }, 
+  {
+    "Hlepcha": {
+      "country": "UA", 
+      "measured_parameters": [
+        "PM1", 
+        "PM2.5", 
+        "PM10", 
+        "PM1 count", 
+        "PM10 count", 
+        "PM2.5 count"
+      ], 
+      "coordinates": {
+        "latitude": 50.1822, 
+        "longitude": 30.202
+      }
+    }
+  }, 
+  {
+    "Blockchain Hub Kyiv": {
+      "country": "UA", 
+      "measured_parameters": [
+        "PM1 count", 
+        "PM2.5", 
+        "PM10", 
+        "PM2.5 count", 
+        "PM10 count", 
+        "PM1"
+      ], 
+      "coordinates": {
+        "latitude": 50.4666, 
+        "longitude": 30.516
+      }
+    }
+  }, 
+  {
+    "Dmitrovichi": {
+      "country": "UA", 
+      "measured_parameters": [
+        "PM1", 
+        "PM1 count", 
+        "PM10", 
+        "PM10 count", 
+        "PM2.5", 
+        "PM2.5 count"
+      ], 
+      "coordinates": {
+        "latitude": 50.2075, 
+        "longitude": 30.5249
+      }
+    }
+  }, 
+  {
+    "KoncheZaspa": {
+      "country": "UA", 
+      "measured_parameters": [
+        "PM10 count", 
+        "PM1", 
+        "PM2.5", 
+        "PM2.5 count", 
+        "PM1 count", 
+        "PM10"
+      ], 
+      "coordinates": {
+        "latitude": 50.2664, 
+        "longitude": 30.6423
+      }
+    }
+  }, 
+  {
+    "Shepeleva": {
+      "country": "UA", 
+      "measured_parameters": [
+        "PM1", 
+        "PM10", 
+        "PM2.5", 
+        "PM10 count", 
+        "PM2.5 count", 
+        "PM1 count"
+      ], 
+      "coordinates": {
+        "latitude": 50.4204, 
+        "longitude": 30.4323
+      }
+    }
+  }, 
+  {
+    "Osokorky": {
+      "country": "UA", 
+      "measured_parameters": [
+        "PM2.5 count", 
+        "PM2.5", 
+        "PM10 count", 
+        "PM1", 
+        "PM1 count", 
+        "PM10"
+      ], 
+      "coordinates": {
+        "latitude": 50.4086, 
+        "longitude": 30.625
+      }
+    }
+  }, 
+  {
+    "Hlepcha": {
+      "country": "UA", 
+      "measured_parameters": [
+        "PM1", 
+        "PM2.5", 
+        "PM10", 
+        "PM1 count", 
+        "PM10 count", 
+        "PM2.5 count"
+      ], 
+      "coordinates": {
+        "latitude": 50.1822, 
+        "longitude": 30.202
+      }
+    }
+  }, 
+  {
+    "Blockchain Hub Kyiv": {
+      "country": "UA", 
+      "measured_parameters": [
+        "PM1 count", 
+        "PM2.5", 
+        "PM10", 
+        "PM2.5 count", 
+        "PM10 count", 
+        "PM1"
+      ], 
+      "coordinates": {
+        "latitude": 50.4666, 
+        "longitude": 30.516
+      }
+    }
+  }
+]
