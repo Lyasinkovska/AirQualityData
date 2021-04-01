@@ -109,10 +109,5 @@ def write_to_json(filename, data):
         json.dump(file, fp=data_file, indent=2, encoding='utf-8')
 
 
-def error_handler(error):
-    logging.error('Status code: %s', error)
-    print error
-
-
 if __name__ == '__main__':
     react(get_response, argv=(urls,))
