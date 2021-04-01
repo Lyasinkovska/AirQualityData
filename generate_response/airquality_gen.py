@@ -1,8 +1,8 @@
 import json
 import logging
 
-from twisted.internet.defer import inlineCallbacks, returnValue, Deferred
-from twisted.internet.task import react
+from twisted.internet import reactor
+from twisted.internet.defer import inlineCallbacks, DeferredList
 from twisted.web.client import BrowserLikePolicyForHTTPS, Agent, readBody
 from twisted.web.http_headers import Headers
 
@@ -12,64 +12,62 @@ LOCATIONS_ID = ('72278', '72168', '66213', '70124', '70854', '66076')
 BASE_URL = b'https://u50g7n0cbj.execute-api.us-east-1.amazonaws.com/v2/locations/'
 METHOD = b'GET'
 HEADERS = {'accept': ['application/json']}
-
-urls = [BASE_URL + location_id for location_id in LOCATIONS_ID]
-logging.basicConfig(level=logging.INFO, filename='airquality.log', datefmt='%m-%d-%Y %H:%M', filemode='a',
+urls = (BASE_URL + location_id for location_id in LOCATIONS_ID)
+logging.basicConfig(level=logging.INFO, filename='airquality.log', datefmt='%y-%m-%d %H:%M', filemode='a',
                     format='%(asctime)s %(message)s')
 
 
-def get_agent(reactor):
-    agent = Agent(reactor, contextFactory=BrowserLikePolicyForHTTPS())
-    return agent
-
-
-@inlineCallbacks
-def get_response(reactor, urls):
-    agent = get_agent(reactor)
+def main(agent, urls):
+    dl = []
     for url in urls:
-        response = yield get_result(agent, url)
-        if response:
-            read_response_body(response)
-        else:
-            raise Exception('No response')
+        try:
+            d = get_response(agent, url)
+            dl.append(d)
+        except Exception, e:
+            print e
+    list_deferred = DeferredList(dl, consumeErrors=True)
+    list_deferred.addBoth(lambda shutdown: reactor.stop())
+
+
+def error(reason):
+    logging.error(reason.value)
 
 
 @inlineCallbacks
-def get_result(agent, url):
-    response = yield agent.request(method=METHOD, uri=url, headers=Headers(HEADERS))
-    if response.code == 200:
-        returnValue(response)
+def get_response(agent, url):
+    try:
+        response = yield agent.request(method=METHOD, uri=url, headers=Headers(HEADERS)).addErrback(error)
+    except Exception, e:
+        print e
     else:
-        raise Exception('Response code : {}'.format(response.code))
+        read_response_body(response)
 
 
 @inlineCallbacks
 def read_response_body(response):
-    d_body = yield readBody(response)
-    if isinstance(d_body, str):
-        returnValue(convert_to_json(d_body))
+    try:
+        body = yield readBody(response)
+    except Exception, e:
+        print e
     else:
-        raise Exception('Body type should be str')
+        convert_to_json(body)
 
 
-@inlineCallbacks
 def convert_to_json(body):
-    json_res = yield json.loads(body)
-    if json_res:
-        returnValue(create_data(json_res))
-    else:
-        raise Exception('Cannot load JSON')
+    create_data(json.loads(body))
 
 
 def create_data(json_res):
     try:
         results = json_res.get('results')[0]
+        logging.info(results.get("name"))
         parameters = results.get('parameters')
-    except:
-        raise Exception('Wrong format of JSON')
+    except Exception, e:
+        raise e
     else:
         save_modeling_data(results, parameters)
         save_monitoring_data(results, parameters)
+    return 'Done'
 
 
 def save_modeling_data(results, parameters, fp=fp_modeling):
@@ -110,4 +108,6 @@ def write_to_json(filename, data):
 
 
 if __name__ == '__main__':
-    react(get_response, argv=(urls,))
+    agent = Agent(reactor, contextFactory=BrowserLikePolicyForHTTPS())
+    main(agent, urls)
+    reactor.run()
