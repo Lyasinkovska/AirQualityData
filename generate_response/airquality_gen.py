@@ -6,6 +6,8 @@ from twisted.internet.task import react
 from twisted.web.client import BrowserLikePolicyForHTTPS, Agent, readBody
 from twisted.web.http_headers import Headers
 
+fp_monitoring = 'monitoring_data.json'
+fp_modeling = 'modeling_data.json'
 LOCATIONS_ID = ('72278', '72168', '66213', '70124', '70854', '66076')
 BASE_URL = b'https://u50g7n0cbj.execute-api.us-east-1.amazonaws.com/v2/locations/'
 METHOD = b'GET'
@@ -70,7 +72,7 @@ def create_data(json_res):
         save_monitoring_data(results, parameters)
 
 
-def save_modeling_data(results, parameters, fp='modeling_data.json'):
+def save_modeling_data(results, parameters, fp=fp_modeling):
     params_names = [param.get("displayName") for param in parameters]
     modeling_data = {"{}".format(results.get("name")): {"country": results.get("country"),
                                                         "coordinates": results.get("coordinates"),
@@ -79,7 +81,7 @@ def save_modeling_data(results, parameters, fp='modeling_data.json'):
     write_to_json(fp, modeling_data)
 
 
-def save_monitoring_data(results, parameters, fp='monitoring_data.json'):
+def save_monitoring_data(results, parameters, fp=fp_monitoring):
     monitoring_data = {
         "{}".format(results.get("name")): {"unit": params.get("unit"), "param_name": params.get("displayName"),
                                            "last_value": params.get("lastValue"),
