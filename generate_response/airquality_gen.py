@@ -6,13 +6,13 @@ from twisted.internet.defer import inlineCallbacks, DeferredList
 from twisted.web.client import BrowserLikePolicyForHTTPS, Agent, readBody
 from twisted.web.http_headers import Headers
 
-fp_monitoring = 'monitoring_data.json'
-fp_modeling = 'modeling_data.json'
+FILE_MONITORING = 'monitoring_data.json'
+FILE_MODELING = 'modeling_data.json'
 LOCATIONS_ID = ('72278', '72168', '66213', '70124', '70854', '66076')
 BASE_URL = b'https://u50g7n0cbj.execute-api.us-east-1.amazonaws.com/v2/locations/'
 METHOD = b'GET'
 HEADERS = {'accept': ['application/json']}
-urls = (BASE_URL + location_id for location_id in LOCATIONS_ID)
+URLS = (BASE_URL + location_id for location_id in LOCATIONS_ID)
 logging.basicConfig(level=logging.INFO, filename='airquality.log', datefmt='%y-%m-%d %H:%M', filemode='a',
                     format='%(asctime)s %(message)s')
 
@@ -69,7 +69,7 @@ def parseData(json_res):
         saveMonitoringData(results, parameters)
 
 
-def saveModelingData(results, parameters, fp=fp_modeling):
+def saveModelingData(results, parameters, fp=FILE_MODELING):
     params_names = [param.get("displayName") for param in parameters]
     modeling_data = {"{}".format(results.get("name")): {"country": results.get("country"),
                                                         "coordinates": results.get("coordinates"),
@@ -78,7 +78,7 @@ def saveModelingData(results, parameters, fp=fp_modeling):
     writeJson(fp, modeling_data)
 
 
-def saveMonitoringData(results, parameters, fp=fp_monitoring):
+def saveMonitoringData(results, parameters, fp=FILE_MONITORING):
     monitoring_data = {}
     for param in parameters:
         monitoring_data["{}".format(results.get("name"))] = {"unit": param.get("unit"),
@@ -107,5 +107,5 @@ def writeJson(filename, data):
 
 if __name__ == '__main__':
     agent = Agent(reactor, contextFactory=BrowserLikePolicyForHTTPS())
-    main(agent, urls)
+    main(agent, generated_urls=URLS)
     reactor.run()

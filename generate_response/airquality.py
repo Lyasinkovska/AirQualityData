@@ -1,8 +1,7 @@
-
 import json
 import logging
 
-from twisted.internet.defer import inlineCallbacks, returnValue
+import twisted
 from twisted.internet.task import react
 from twisted.web.client import BrowserLikePolicyForHTTPS, Agent, readBody
 from twisted.web.http_headers import Headers
@@ -13,7 +12,7 @@ METHOD = b'GET'
 HEADERS = {'accept': ['application/json']}
 urls = (BASE_URL + location_id for location_id in LOCATIONS_ID)
 
-logging.basicConfig(level=logging.INFO, filename='airquality.log', datefmt='%m-%d-%Y %H:%M', filemode='a',
+logging.basicConfig(level=logging.INFO, filename='air_quality.log', datefmt='%m-%d-%Y %H:%M', filemode='a',
                     format='%(asctime)s %(message)s')
 
 
@@ -41,7 +40,7 @@ def callback_body(body):
 
 
 def error_handler(error):
-    print type(error), error
+    print error.value
     logging.error('Status code: %s', error)
 
 
@@ -52,6 +51,8 @@ def main(reactor):
         d.addCallbacks(callback_request, error_handler)
     return d
 
+
+# f = twisted.python.failure.Failure
 
 if __name__ == '__main__':
     react(main)
