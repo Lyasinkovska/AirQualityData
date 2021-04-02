@@ -17,15 +17,15 @@ logging.basicConfig(level=logging.INFO, filename='airquality.log', datefmt='%y-%
                     format='%(asctime)s %(message)s')
 
 
-def main(agent, urls):
-    dl = []
-    for url in urls:
+def main(twisted_agent, generated_urls):
+    deferred_lst = []
+    for url in generated_urls:
         try:
-            d = get_response(agent, url)
-            dl.append(d)
+            d = getResponse(twisted_agent, url)
+            deferred_lst.append(d)
         except Exception, e:
-            print e
-    list_deferred = DeferredList(dl, consumeErrors=True)
+            print(e)
+    list_deferred = DeferredList(deferred_lst, consumeErrors=True)
     list_deferred.addBoth(lambda shutdown: reactor.stop())
 
 
@@ -34,30 +34,30 @@ def error(reason):
 
 
 @inlineCallbacks
-def get_response(agent, url):
+def getResponse(twisted_agent, url):
     try:
-        response = yield agent.request(method=METHOD, uri=url, headers=Headers(HEADERS)).addErrback(error)
+        response = yield twisted_agent.request(method=METHOD, uri=url, headers=Headers(HEADERS)).addErrback(error)
     except Exception, e:
-        print e
+        print(e)
     else:
-        read_response_body(response)
+        readResponseBody(response)
 
 
 @inlineCallbacks
-def read_response_body(response):
+def readResponseBody(response):
     try:
         body = yield readBody(response)
     except Exception, e:
-        print e
+        print(e)
     else:
-        convert_to_json(body)
+        convertToJson(body)
 
 
-def convert_to_json(body):
-    create_data(json.loads(body))
+def convertToJson(body):
+    parseData(json.loads(body))
 
 
-def create_data(json_res):
+def parseData(json_res):
     try:
         results = json_res.get('results')[0]
         logging.info(results.get("name"))
@@ -65,46 +65,44 @@ def create_data(json_res):
     except Exception, e:
         raise e
     else:
-        save_modeling_data(results, parameters)
-        save_monitoring_data(results, parameters)
-    return 'Done'
+        saveModelingData(results, parameters)
+        saveMonitoringData(results, parameters)
 
 
-def save_modeling_data(results, parameters, fp=fp_modeling):
+def saveModelingData(results, parameters, fp=fp_modeling):
     params_names = [param.get("displayName") for param in parameters]
     modeling_data = {"{}".format(results.get("name")): {"country": results.get("country"),
                                                         "coordinates": results.get("coordinates"),
                                                         "measured_parameters": params_names}
                      }
-    write_to_json(fp, modeling_data)
+    writeJson(fp, modeling_data)
 
 
-def save_monitoring_data(results, parameters, fp=fp_monitoring):
-    monitoring_data = {
-        "{}".format(results.get("name")): {"unit": params.get("unit"), "param_name": params.get("displayName"),
-                                           "last_value": params.get("lastValue"),
-                                           "last_updated": params.get("lastUpdated"),
-                                           "parameter_id": params.get("parameterId")} for params
-        in parameters
-    }
+def saveMonitoringData(results, parameters, fp=fp_monitoring):
+    monitoring_data = {}
+    for param in parameters:
+        monitoring_data["{}".format(results.get("name"))] = {"unit": param.get("unit"),
+                                                             "param_name": param.get("displayName"),
+                                                             "last_value": param.get("lastValue"),
+                                                             "last_updated": param.get("lastUpdated"),
+                                                             "parameter_id": param.get("parameterId")}
+    writeJson(fp, monitoring_data)
 
-    write_to_json(fp, monitoring_data)
 
-
-def read_json(filename='modeling_data.json'):
+def readJson(filename='modeling_data.json'):
     with open(filename, 'r') as read_file:
-        file = json.load(read_file)
-        return file
+        downloaded_file = json.load(read_file)
+        return downloaded_file
 
 
-def write_to_json(filename, data):
+def writeJson(filename, data):
     try:
-        file = read_json(filename)
-        file.append(data)
-    except:
-        file = [data]
+        downloaded_file = readJson(filename)
+        downloaded_file.append(data)
+    except ValueError:
+        downloaded_file = [data]
     with open(filename, 'w') as data_file:
-        json.dump(file, fp=data_file, indent=2, encoding='utf-8')
+        json.dump(downloaded_file, fp=data_file, indent=2, encoding='utf-8')
 
 
 if __name__ == '__main__':
