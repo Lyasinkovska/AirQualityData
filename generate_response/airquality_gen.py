@@ -89,7 +89,7 @@ def saveMonitoringData(results, parameters, fp=FILE_MONITORING):
     writeJson(fp, monitoring_data)
 
 
-def readJson(filename='modeling_data.json'):
+def readJson(filename):
     with open(filename, 'r') as read_file:
         downloaded_file = json.load(read_file)
         return downloaded_file
