@@ -47,10 +47,64 @@
   {
     "KoncheZaspa": {
       "param_name": "PM2.5", 
-      "last_updated": "2021-04-02T08:55:46+00:00", 
       "parameter_id": 2, 
+      "last_updated": "2021-04-02T08:55:46+00:00", 
       "last_value": 18.8, 
       "unit": "\u00b5g/m\u00b3"
+    }
+  }, 
+  {
+    "Dmitrovichi": {
+      "param_name": "PM2.5", 
+      "parameter_id": 2, 
+      "last_updated": "2021-04-13T10:40:30+00:00", 
+      "last_value": 53.6, 
+      "unit": "\u00b5g/m\u00b3"
+    }
+  }, 
+  {
+    "Hlepcha": {
+      "param_name": "PM2.5 count", 
+      "parameter_id": 130, 
+      "last_updated": "2021-04-13T10:39:19+00:00", 
+      "last_value": 0.395, 
+      "unit": "particles/cm\u00b3"
+    }
+  }, 
+  {
+    "Osokorky": {
+      "param_name": "PM1 count", 
+      "parameter_id": 126, 
+      "last_updated": "2021-04-13T10:40:39+00:00", 
+      "last_value": 4.521, 
+      "unit": "particles/cm\u00b3"
+    }
+  }, 
+  {
+    "Blockchain Hub Kyiv": {
+      "param_name": "PM2.5", 
+      "parameter_id": 2, 
+      "last_updated": "2021-04-13T10:39:41+00:00", 
+      "last_value": 71, 
+      "unit": "\u00b5g/m\u00b3"
+    }
+  }, 
+  {
+    "Shepeleva": {
+      "param_name": "PM1 count", 
+      "parameter_id": 126, 
+      "last_updated": "2021-04-13T10:40:35+00:00", 
+      "last_value": 5.879, 
+      "unit": "particles/cm\u00b3"
+    }
+  }, 
+  {
+    "KoncheZaspa": {
+      "param_name": "PM10 count", 
+      "last_updated": "2021-04-13T10:40:14+00:00", 
+      "parameter_id": 135, 
+      "last_value": 0.038, 
+      "unit": "particles/cm\u00b3"
     }
   }
 ]
